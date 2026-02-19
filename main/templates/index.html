@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator</title>
+</head>
+<body>
+
+    <h2>Django Kalkulator</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="number" name="son1" placeholder="1-son" required>
+        <input type="number" name="son2" placeholder="2-son" required>
+
+        <select name="amal">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+
+        <button type="submit">Hisoblash</button>
+    </form>
+
+    {% if result %}
+        <h3>Natija: {{ result }}</h3>
+    {% endif %}
+
+</body>
+</html>
